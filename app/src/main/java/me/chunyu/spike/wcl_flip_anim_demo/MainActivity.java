@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        setAnimators();
-        setCameraDistance();
+        setAnimators(); // 设置动画
+        setCameraDistance(); // 设置镜头距离
     }
 
     // 设置动画
@@ -63,13 +63,14 @@ public class MainActivity extends AppCompatActivity {
 
     // 翻转卡片
     public void flipCard(View view) {
+        // 正面朝上
         if (!mIsShowBack) {
             mRightOutSet.setTarget(mFlCardFront);
             mLeftInSet.setTarget(mFlCardBack);
             mRightOutSet.start();
             mLeftInSet.start();
             mIsShowBack = true;
-        } else {
+        } else { // 背面朝上
             mRightOutSet.setTarget(mFlCardBack);
             mLeftInSet.setTarget(mFlCardFront);
             mRightOutSet.start();
