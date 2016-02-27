@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_length">3000</integer>
+    <integer name="anim_half_length">1500</integer>
+</resources>

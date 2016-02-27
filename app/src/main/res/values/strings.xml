@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">wcl-flip-anim-demo</string>
+    <string name="card_front">正面</string>
+    <string name="card_back">反面</string>
 </resources>
