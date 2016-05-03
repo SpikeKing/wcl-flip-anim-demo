@@ -78,4 +78,10 @@ public class MainActivity extends AppCompatActivity {
             mIsShowBack = false;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }
