@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_fl_card_back"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,15 +9,15 @@
         android:layout_height="match_parent"
         android:contentDescription="@null"
         android:padding="16dp"
-        android:src="@drawable/rectangle_back"/>
+        android:src="@drawable/rectangle_back" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="40sp"
         android:text="@string/card_back"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
 
 </FrameLayout>

@@ -9,14 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.main_fl_container) FrameLayout mFlContainer;
-    @Bind(R.id.main_fl_card_back) FrameLayout mFlCardBack;
-    @Bind(R.id.main_fl_card_front) FrameLayout mFlCardFront;
+    //    @Bind(R.id.main_fl_container) FrameLayout mFlContainer;
+//    @Bind(R.id.main_fl_card_back) FrameLayout mFlCardBack;
+//    @Bind(R.id.main_fl_card_front) FrameLayout mFlCardFront;
+    FrameLayout mFlContainer;
+    FrameLayout mFlCardBack;
+    FrameLayout mFlCardFront;
 
     private AnimatorSet mRightOutSet; // 右出动画
     private AnimatorSet mLeftInSet; // 左入动画
@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        mFlContainer = findViewById(R.id.main_fl_container);
+        mFlCardBack = findViewById(R.id.main_fl_card_back);
+        mFlCardFront = findViewById(R.id.main_fl_card_front);
 
         setAnimators(); // 设置动画
         setCameraDistance(); // 设置镜头距离
@@ -40,13 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
         // 设置点击事件
         mRightOutSet.addListener(new AnimatorListenerAdapter() {
-            @Override public void onAnimationStart(Animator animation) {
+            @Override
+            public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
                 mFlContainer.setClickable(false);
             }
         });
         mLeftInSet.addListener(new AnimatorListenerAdapter() {
-            @Override public void onAnimationEnd(Animator animation) {
+            @Override
+            public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 mFlContainer.setClickable(true);
             }
@@ -82,6 +86,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }
